@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <link rel="icon" href="../img/noodle.png" />
+  <link rel="stylesheet" href="../css/quasiestado.css" />
+  <link rel="stylesheet" href="../css/noodle.css" />
+  <body>
+    <!-- Agregamos el navbar-->
+    <header>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      />
+      <div class="qNavbar" id="qNavbar">
+        <a href="main"><img src="../img/noodle.png" class="imgQNavbar" /></a>
+        <nav>
+          <ul>
+            <li><a href="main"> Inicio </a></li>
+            <li><a href="contact">Contacto</a></li>
+            <!-- Si hay un usuario logeado... -->
+            <% if(user) { %>
+            <li><a href="coleccion">Mi Colección</a></li>
+            <li><a href="user"> Perfil </a></li>
+            <li><a href="cerrarsesion"> Cerrar sesion </a></li>
+            <!-- si no hay un usuario logeado... -->
+            <% } else {%>
+            <li><a href="login">Iniciar Sesión</a></li>
+            <% } %>
+
+            <button class="switch" id="switch">
+              <span class="material-icons" id="cambioModo">mode_night</span>
+            </button>
+          </ul>
+        </nav>
+        <div class="qNavbarResponsivo" id="qNavbarResponsivo">
+          <span class="material-icons">more_horiz</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="nProyecto">
+        <div class="nProyectoimg">
+          <%console.log(resultado[0])%>
+          <img
+            src="../upload/<%= resultado[0].usuario_idusuario %>/<%= resultado[0].img %>"
+          />
+        </div>
+        <div class="nProyectoContenido"></div>
+        <div class="qContenidoIndexado">
+          <div class="qAbrirSidebarIndice">
+            <span class="material-icons">
+              arrow_forward_ios
+            </span>
+          </div>
+          <div class="qSidebarIndiceRes">
+            <div class="qCerrarSidebar">
+              <span class="material-icons">
+                close
+              </span>
+            </div>
+            <aside class="qSidebarMenu">
+              <div class="qItem">
+                <a href="#seccion1" class="qEnlace">Descripción</a>
+              </div>
+              <div class="qItem">
+                <a href="#seccion2" class="qAbrirSubMenu"
+                  >Proceso de desarrollo</a
+                >
+              </div>
+              <div class="qItem">
+                <a href="#seccion3" class="qAbrirSubMenu">Enlace al proyecto</a>
+              </div>
+            </aside>
+          </div>
+          <aside class="qSidebarIndice">
+            <div class="qContenedorSide">
+              <h1><%= resultado[0].titulo %></h1>
+              <div class="qSidebarMenu">
+                <div class="qItem">
+                  <a href="#seccion1" class="qEnlace">Descripción</a>
+                </div>
+                <div class="qItem">
+                  <a href="#seccion2" class="qAbrirSubMenu"
+                    >Proceso de Desarrollo</a
+                  >
+                </div>
+                <div class="qItem">
+                  <a href="#seccion3" class="qAbrirSubMenu"
+                    >Enlace al proyecto</a
+                  >
+                </div>
+              </div>
+            </div>
+          </aside>
+          <div class="qContenido">
+            <article>
+              <section class="nContenidoProyecto" id="seccion1">
+                <h2>Descripción</h2>
+                <hr />
+                <p>
+                  <%= resultado[0].descripcion %>
+                </p>
+              </section>
+
+              <section class="nContenidoProyecto" id="seccion2">
+                <h2>Proceso de desarrollo</h2>
+                <hr />
+                <p>
+                  <%= resultado[0].proceso %>
+                </p>
+              </section>
+              <section class="nContenidoProyecto" id="seccion3">
+                <h2>Enlace al proyecto</h2>
+                <hr />
+                <p class="proyectoEnlace">
+                  Titulo del proyecto: <%= resultado[0].titulo %>
+                  <br /><br />
+                  <a
+                    href="../upload/<%=resultado[0].usuario_idusuario%>/<%=resultado[0].img%>"
+                    target="_blank"
+                    ><%= resultado[0].img %></a
+                  >
+                </p>
+              </section>
+              <div class="ContenedorDescarga">
+                <% console.log(resultado[0]) %>
+                <a
+                  href="../upload/<%=resultado[0].usuario_idusuario%>/<%=resultado[0].img%>"
+                  download=""
+                  >Descargar</a
+                >
+              </div>
+            </article>
+            <!-- Si el usuario que visitó la página es el mismo que lo creó o el admin, puede editar o borrar el proyecto-->
+            <% if(resultado[0].usuario_idusuario == user.idusuario ||
+            user.idusuario === 1) { %>
+            <a
+              href="../editar/<%=resultado[0].idproyecto%>"
+              class="qBoton qBotonAzul nEditar"
+              >Editar</a
+            >
+            <a
+              href="../eliminalo/<%=resultado[0].idproyecto%>"
+              class="qBoton qBotonVerde nEliminar"
+              >Eliminar</a
+            >
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include ("templates/footer.html") %>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/botonDescarga.js"></script>
+  </body>
+</html>

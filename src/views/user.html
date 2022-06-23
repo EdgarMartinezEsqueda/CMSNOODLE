@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <link rel="stylesheet" href="css/noodle.css" />
+  <body>
+    <!-- Agregamos el navbar-->
+    <%- include ("templates/navbar.html") %>
+    <main>
+      <% if(user) { %>
+      <div class="qContenidoIndexado">
+        <div class="qAbrirSidebarIndice">
+          <span class="material-icons">
+            arrow_forward_ios
+          </span>
+        </div>
+        <aside class="qSidebarIndice nIndiceUsuario">
+          <div class="qContenedorSide nContenedorSide">
+            <div class="nNombrePerfil">
+              <h1 id="nombreUsuario">
+                <!-- Mostrar el nombre y apellido del usuario-->
+                <%= user.nombre %> <%= user.apellido %>
+              </h1>
+              <hr />
+            </div>
+            <div class="qSidebarMenu">
+              <div class="qItem">
+                <a href="#biografia" class="qEnlace">Biografía</a>
+              </div>
+              <div class="qItem"><a href="#experiencia">Experiencia</a></div>
+              <div class="qItem">
+                <a href="#formacion" class="qEnlace">Formación</a>
+              </div>
+              <div class="qItem"><a href="#habilidades">Habilidades</a></div>
+              <div class="qItem"><a href="#idiomas">Idiomas</a></div>
+            </div>
+          </div>
+        </aside>
+        <div class="qContenido nContenedorContenidoUsuario">
+          <article>
+            <% if(datos.length > 0) {%> <% console.log(datos.idiomas) %>
+            <div class="nContenidoUsuario" id="biografia">
+              <h1>Biografía</h1>
+              <p>
+                <%= datos[0].biografia %>
+              </p>
+            </div>
+            <div class="nContenidoUsuario" id="experiencia">
+              <h1>Experiencia</h1>
+              <%= datos[0].experiencia %>
+            </div>
+            <div class="nContenidoUsuario" id="formacion">
+              <h1>Formación</h1>
+              <%= datos[0].formacion %>
+            </div>
+            <div class="nContenidoUsuario" id="habilidades">
+              <h1>Habilidades</h1>
+              <div class="nContenedorHabilidades">
+                <%= datos[0].habilidades %>
+              </div>
+            </div>
+            <div class="nContenidoUsuario" id="idiomas">
+              <h1>Idiomas</h1>
+              <%= datos[0].idiomas %>
+            </div>
+            <!-- Si aun no hay un Cv asociado al usuario -->
+            <% } else { %>
+            <div class="nContenidoUsuario">
+              <h1>Aún no tienes un CV, crea uno <a href="crearCV">aquí</a></h1>
+            </div>
+            <% } %>
+          </article>
+          <% if(datos.length > 0 || user.idusuario === 1) {%>
+          <a href="editarCV" class="qBoton qBotonAzul nEliminar"> Editar</a>
+          <% } %>
+        </div>
+      </div>
+      <% } else { %>
+      <div class="nErrorPerfil">
+        <h1>Al parecer aún no inicias sesión</h1>
+        <h2>Inicia sesión <a href="login"> aquí</a></h2>
+      </div>
+      <% } %>
+    </main>
+    <!-- Agregamos el footer-->
+    <%- include ("templates/footer.html") %>
+  </body>
+</html>

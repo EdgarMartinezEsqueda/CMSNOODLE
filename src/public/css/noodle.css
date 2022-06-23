@@ -1,0 +1,508 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&family=Nunito+Sans:wght@300&display=swap");
+
+/* User.html */
+.nContendorImgPerfil {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imgPerfil {
+  width: 180px;
+  height: 180px;
+}
+.nIndiceUsuario {
+  width: 35%;
+  min-width: 220px;
+  height: 80vh;
+}
+.nNombrePerfil {
+  width: 100%;
+  text-align: center;
+  padding: 5px;
+}
+.nNombrePerfil h1 {
+  margin: 10px;
+}
+.nContenedorSide {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.nContenedorHabilidades {
+  display: flex;
+  flex-wrap: wrap;
+}
+.nContenedorHabilidades > * {
+  flex: 1 1 31%;
+  border: 2px solid #36b9ce;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+.nContenidoUsuario h1,
+.nContenidoProyecto h2 {
+  font-family: "Quicksand", sans-serif;
+}
+.nContenedorContenidoUsuario {
+  padding: 50px;
+}
+.registrarse {
+  height: 540px;
+} /*Fin user.html */
+
+/* proyecto.html */
+.backImg {
+  background-image: url("../img/desert.jpg");
+  height: 300px;
+}
+.difuminado-negro {
+  background-color: black;
+  opacity: 0.8;
+  margin-bottom: 100px;
+  margin-right: 1200px;
+  margin-left: 100px;
+  height: 800px;
+}
+.mainImg {
+  background-color: white;
+  text-align: center;
+  float: left;
+  width: 40%;
+  height: 1000px;
+}
+.img-perfil {
+  align-content: center;
+}
+.text-info {
+  background-color: white;
+  text-align: justify;
+  float: right;
+  width: 60%;
+  height: 1000px;
+} /* fin proyecto.html */
+
+/* pagina de Registro Exitoso */
+main.nRegistroExitoso {
+  text-align: center;
+  padding: 40px 0;
+}
+.nRegistroExitosoCard h1 {
+  color: #88b04b;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.nRegistroExitosoCard p {
+  color: #404f5e;
+  font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+  font-size: 20px;
+  margin: 0;
+}
+.nRegistroExitoso i {
+  color: #9abc66;
+  font-size: 100px;
+  line-height: 200px;
+  margin-left: -15px;
+}
+.nRegistroExitosoCard {
+  background: white;
+  padding: 60px;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px #c8d0d8;
+  display: inline-block;
+  margin: 0 auto;
+}
+div.nRegistroExitosoCheck {
+  border-radius: 200px;
+  height: 200px;
+  width: 200px;
+  background: #f8faf5;
+  margin: 0 auto;
+}
+.nRegistroExitoso a {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+div.nErrorPerfil {
+  width: 100%;
+  height: 63vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+div.nErrorPerfil h1 {
+  color: var(--azulMarino);
+}
+div.nErrorPerfil a {
+  color: var(--azulCielo);
+  text-decoration: none;
+}
+div.nErrorPerfil > * {
+  flex: 1 1 100%;
+  text-align: center;
+}
+
+/* Página principal */
+body.index main {
+  width: 100%;
+  padding: 0;
+}
+main > .nCntIndex {
+  width: 100%;
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+.nCntIndex div {
+  flex: 1 1 50%;
+}
+.nCntIndex .nIndexTexto {
+  padding: 100px;
+  background: #f2f2f2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  z-index: 1;
+}
+.nCntIndex .nIndexTexto div h1 {
+  font-size: 35px;
+}
+.nCntIndex .nIndexTexto div .portafolioIndex {
+  margin-left: 50px;
+  color: #00000059;
+}
+.nCntIndex .nIndexTexto div h1,
+.nCntIndex .nIndexTexto div p {
+  padding-bottom: 20px;
+}
+.nCntIndex .nIndexTexto .linkIndex {
+  background: var(--azulMarino);
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-top: 20px;
+  padding: 10px;
+}
+.nCntIndex .nIndexImagen {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.nIndexImagen img {
+  width: 100%;
+}
+.bg {
+  animation: slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+  opacity: 0.5;
+  height: 90%;
+  width: 40%;
+  position: absolute;
+}
+.bg2 {
+  animation-direction: alternate-reverse;
+  animation-duration: 4s;
+}
+.bg3 {
+  animation-duration: 5s;
+}
+.content {
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  z-index: 2;
+  height: fit-content;
+}
+.content h1 {
+  font-family: monospace;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+} /* Fin página principla */
+
+/* upload.html */
+div.cntUpload {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+div.cntUpload > div {
+  flex: 1 1 100%;
+  margin: 10px;
+}
+.qForm {
+  padding: 25px 30px;
+  min-width: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+} /* Fin upload.html */
+
+/*coleccion.html... */
+/* ...si no hay datos que mostrar */
+.nRegistroExitoso {
+  height: 69vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.nRegistroExitoso > * {
+  flex: 1 1 100%;
+}
+/* ...Si hay datos que mostrar */
+.nColeccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.nColeccion > div {
+  flex: 1 1 100%;
+}
+a.btn {
+  background: #0096a0;
+  border-radius: 4px;
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.1s 0s ease-out;
+}
+.no-touch a.btn:hover {
+  background: #00a2ad;
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+.no-touch a.btn:active,
+a.btn:active {
+  background: #008a93;
+  box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.25);
+  transform: translate3d(0, 1px, 0);
+  transition: all 0.025s 0s ease-out;
+}
+div.card {
+  background: #ffffff;
+  display: inline-block;
+  margin: 8px;
+  max-width: 265px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 265px;
+  z-index: 1;
+}
+div.card img {
+  width: 265px;
+  max-height: 265px;
+  height: 256px;
+}
+div.card .card__image-holder {
+  background: rgba(0, 0, 0, 0.1);
+  height: 0;
+  padding-bottom: 75%;
+}
+div.card div.card-title {
+  background: #ffffff;
+  padding: 6px 15px 10px;
+  position: relative;
+  z-index: 0;
+}
+div.card div.card-title a.toggle-info {
+  border-radius: 32px;
+  height: 32px;
+  padding: 0;
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  width: 32px;
+}
+div.card div.card-title a.toggle-info span {
+  background: #ffffff;
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 16px;
+  transition: all 0.15s 0s ease-out;
+  width: 12px;
+}
+div.card div.card-title a.toggle-info span.left {
+  right: 14px;
+  transform: rotate(45deg);
+}
+div.card div.card-title a.toggle-info span.right {
+  left: 14px;
+  transform: rotate(-45deg);
+}
+div.card div.card-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  margin: 0;
+  padding: 0;
+}
+div.card div.card-title h2 small {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+div.card div.card-description {
+  padding: 0 15px 10px;
+  position: relative;
+  font-size: 14px;
+}
+div.card div.card-actions {
+  box-shadow: 0 2px 0px 0 rgba(0, 0, 0, 0.075);
+  padding: 10px 15px 20px;
+  text-align: center;
+}
+div.card div.card-flap {
+  background: #d9d9d9;
+  position: absolute;
+  width: 100%;
+  transform-origin: top;
+  transform: rotateX(-90deg);
+}
+div.card div.flap1 {
+  transition: all 0.3s 0.3s ease-out;
+  z-index: -1;
+}
+div.card div.flap2 {
+  transition: all 0.3s 0s ease-out;
+  z-index: -2;
+}
+div.cards.showing div.card {
+  cursor: pointer;
+  opacity: 0.6;
+  transform: scale(0.88);
+}
+.no-touch div.cards.showing div.card:hover {
+  opacity: 0.94;
+  transform: scale(0.92);
+}
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+div.card.show div.card-title a.toggle-info {
+  background: #ff6666 !important;
+}
+div.card.show div.card-title a.toggle-info span {
+  top: 15px;
+}
+div.card.show div.card-title a.toggle-info span.left {
+  right: 10px;
+}
+div.card.show div.card-title a.toggle-info span.right {
+  left: 10px;
+}
+div.card.show div.card-flap {
+  background: #ffffff;
+  transform: rotateX(0deg);
+}
+div.card.show div.flap1 {
+  transition: all 0.3s 0s ease-out;
+}
+div.card.show div.flap2 {
+  transition: all 0.3s 0.2s ease-out;
+} /* Fin del coleccion.html */
+
+/* Boton de editar en el user.html */
+.nEditar,
+.nEliminar {
+  padding: 10px;
+  text-decoration: none;
+  height: 45px;
+}
+.nEliminar {
+  padding-top: 5px;
+  margin-right: 40px;
+} /* fin boton editar */
+
+/* estilo etiqueta hr */
+hr {
+  border: 1px solid gray;
+  padding-bottom: 0;
+  margin-bottom: 15px;
+  margin-right: 40px;
+} /*fin del hr */
+
+/* proyecto.html */
+.qContenido {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.nProyectoimg {
+  height: 30vh;
+  width: 100%;
+  overflow: hidden;
+}
+.nProyectoimg img {
+  width: 100%;
+}
+.nContenidoProyecto .proyectoEnlace {
+  background: var(--sangria);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-right: 40px;
+}
+.nContenidoProyecto .proyectoEnlace a {
+  color: white;
+  text-decoration: none;
+} /* fin proyecto .html */
+/* boton de desacarga */
+
+/* ------------------------------- Tabletas y Méviles ------------------------------- */
+@media screen and (max-width: 1023px) {
+  main > .nCntIndex {
+    display: block;
+  }
+  .bg {
+    width: 80%;
+  }
+  .nCntIndex .nIndexTexto div .portafolioIndex {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+  .nCntIndex .nIndexTexto div h1 {
+    font-size: 20px;
+  }
+  .nCntIndex .nIndexTexto div p {
+    font-size: 15px;
+  }
+  .nCntIndex .nIndexTexto {
+    padding: 30px;
+  }
+  div.cntUpload {
+    display: block;
+  }
+}
+
+.alerta {
+  text-align: center;
+  padding: 20px;
+  background: var(--azulMarino);
+  color: white;
+}

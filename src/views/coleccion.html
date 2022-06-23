@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <body>
+    <!-- Agregamos el navbar-->
+    <%- include ("templates/navbar.html") %>
+    <link rel="stylesheet" href="css/noodle.css" />
+    <%- include ("templates/alertas.html") %> <% if(datos.length > 0) {%>
+
+    <main>
+      <h1>Tus proyectos</h1>
+      <div class="nColeccion">
+        <% datos.forEach(element =>{ %>
+        <div class="card">
+          <div class="card__image-holder">
+            <img
+              class="card__image"
+              src="upload/<%=user.idusuario%>/<%= element.img %>"
+            />
+          </div>
+          <div class="card-title">
+            <a
+              href="proyecto/<%= element.idproyecto %>"
+              class="toggle-info btn"
+            >
+              <span class="left"></span>
+              <span class="right"></span>
+            </a>
+            <h2>
+              <%= element.titulo %>
+              <small><%= helpers.haceCuanto(element.agregado) %></small>
+            </h2>
+          </div>
+          <div class="card-flap flap1">
+            <div class="card-description">
+              <%= element.descripcion %>
+            </div>
+            <div class="card-flap flap2">
+              <div class="card-actions">
+                <a
+                  href="proyecto/<%= element.idproyecto %>"
+                  target="_blank"
+                  class="btn"
+                  >Ver más</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } ) %>
+      </div>
+
+      <a href="upload" class="qBoton qBotonAzul nEditar"
+        >Crear nuevo proyecto</a
+      >
+    </main>
+    <%} else { %>
+
+    <main class="nRegistroExitoso nColeccion">
+      <div class="nRegistroExitosoCard">
+        <h1>Al parecer aún no tienes proyectos guardados</h1>
+        <p>Crea un nuevo proyecto <a href="upload">aquí</a></p>
+      </div>
+    </main>
+    <% } %>
+    <!-- Agregamos el footer-->
+    <%- include ("templates/footer.html") %>
+    <script src="js/coleccion.js"></script>
+  </body>
+</html>

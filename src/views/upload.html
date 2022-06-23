@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <link rel="stylesheet" href="css/noodle.css" />
+  <link rel="stylesheet" href="css/customFileInput.css" />
+  <body>
+    <!-- Agregamos el navbar-->
+    <%- include ("templates/navbar.html") %>
+
+    <main>
+      <div class="nUpload">
+        <% console.log(user) %>
+        <h1>Enseña al mundo lo que sabes hacer <%= user.nombre %></h1>
+        <form
+          action="upload"
+          method="POST"
+          class="qForm"
+          enctype="multipart/form-data"
+        >
+          <div class="cntUpload">
+            <div>
+              <label for="titulo">Titulo<em>*</em></label>
+              <input
+                type="text"
+                name="titulo"
+                placeholder="Titulo"
+                required
+                class="qTexto"
+              />
+              <br />
+              <label for="descripción">Descripción<em>*</em></label>
+              <textarea
+                name="descripcion"
+                cols="30"
+                rows="10"
+                class="qTextArea"
+                required
+              ></textarea>
+              <br />
+            </div>
+            <div>
+              <div class="wrap-custom-file">
+                <input type="file" name="archivo" required />
+                <label for="archivo">
+                  <span id="evidencia">Evidencia</span>
+                  <span class="material-icons">
+                    add_circle
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="proceso">Proceso de desarrollo <em>*</em></label>
+            <textarea
+              name="proceso"
+              cols="30"
+              rows="10"
+              class="qTextArea"
+              required
+            ></textarea>
+          </div>
+          <input type="submit" value="Aceptar" class="qBoton qBotonAzul" />
+        </form>
+      </div>
+    </main>
+
+    <!-- Agregamos el footer-->
+    <%- include ("templates/footer.html") %>
+    <script src="js/customInput.js"></script>
+  </body>
+</html>

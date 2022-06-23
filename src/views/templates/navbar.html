@@ -1,0 +1,30 @@
+<header>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Icons"
+  />
+  <div class="qNavbar" id="qNavbar">
+    <a href="main"><img src="img/noodle.png" class="imgQNavbar" /></a>
+    <nav>
+      <ul>
+        <li><a href="main"> Inicio </a></li>
+        <!-- Si hay un usuario logeado... -->
+        <% if(user) { %>
+        <li><a href="coleccion">Mis Proyectos</a></li>
+        <li><a href="user"> Perfil </a></li>
+        <li><a href="cerrarsesion"> Cerrar sesion </a></li>
+        <!-- si no hay un usuario logeado... -->
+        <% } else {%>
+        <li><a href="login">Iniciar Sesión</a></li>
+        <% } %>
+
+        <button class="switch" id="switch">
+          <span class="material-icons" id="cambioModo">mode_night</span>
+        </button>
+      </ul>
+    </nav>
+    <div class="qNavbarResponsivo" id="qNavbarResponsivo">
+      <span class="material-icons">more_horiz</span>
+    </div>
+  </div>
+</header>

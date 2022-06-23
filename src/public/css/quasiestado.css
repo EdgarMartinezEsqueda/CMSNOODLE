@@ -1,0 +1,1294 @@
+/* "crear"  nuestras propias fuentes */
+@font-face {
+  font-family: RobotoRegular;
+  src: url("../fuentes/Roboto-Regular.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: UbuntuRegular;
+  src: url("../fuentes/Ubuntu-Regular.ttf");
+  font-weight: 300;
+}
+
+/* colores */
+:root {
+  --sangria: #592538;
+  --azulMarino: #161040;
+  --azulCielo: #54bfb5;
+  --negro: #0d0d0d;
+  --fondo: #f2f2f2;
+  --gris: #a6a6a6;
+  --fondoModoOscuro: #22272e;
+  --fondoScripts: #e6e3e3;
+  --fondoCargandoEspiral: #102626;
+  --fondoRutaCargandoEspiral: #0d2323;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: black;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: RobotoRegular;
+}
+
+/* Estilos del scroll. */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--azulMarino);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos para el NavBar */
+.qNavbar {
+  width: 80%;
+  margin: 0 auto;
+}
+header {
+  background-color: var(--sangria);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: RobotoRegular;
+}
+.imgQNavbar {
+  float: left;
+  width: 40px;
+  height: 40px;
+}
+nav {
+  float: right;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+nav li {
+  display: inline-block;
+  margin-left: 50px;
+  padding-top: 10px;
+}
+nav #switch {
+  display: inline-block;
+  margin-left: 40px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+nav a::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background-color: white;
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+nav a:hover {
+  color: var(--gris);
+}
+nav a:hover::after {
+  width: 100%;
+}
+.qNavbarResponsivo {
+  position: absolute;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  right: 10px;
+  top: 20px;
+  display: none;
+}
+/* Fin de estilos del NavBar */
+
+/* MODO OSCURO */
+.switch {
+  background: var(--fondoModoOscuro);
+  border-radius: 1000px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.switch.active {
+  background: orange;
+}
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: var(--fondo);
+}
+main.dark {
+  background: var(--negro);
+  color: white;
+}
+main.dark #comando {
+  background: var(--fondoModoOscuro);
+  color: #a3a4a0;
+}
+main.dark .qContenedorComentario,
+main.dark .qCodigoHTML {
+  background: var(--fondoModoOscuro);
+}
+main.dark .ejemploForms,
+main.dark .qForm,
+main.dark .qTextoAnimado,
+main.dark .qContenedorCargando,
+main.dark .qTarjeta {
+  background-color: #282a35;
+  color: white;
+}
+main.dark hr {
+  background: white;
+}
+main.dark .qSubSeccion {
+  color: black;
+} /* FIN DEL MODO OSCURO */
+
+/* Agregarle espacios a los siguientes campos */
+.qPresentacion::after,
+.qFooter::after,
+.qFooter::before,
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+main {
+  background-color: var(--fondo);
+  width: 90vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+/* Estilos del index.html */
+.qPresentacion {
+  display: flex;
+  width: 85vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+.qImagenDerecha {
+  width: 50%;
+  height: 400px;
+}
+.qContenido {
+  width: 100%;
+  padding-top: 20px;
+}
+.qContenido *:not(hr) {
+  padding-bottom: 15px;
+}
+section > p {
+  padding-right: 50px;
+  text-align: justify;
+}
+/* ESTILOS DE COMENTARIOS/TESTIMONIOS. */
+.qContenedorComentario {
+  position: relative;
+  width: 90%;
+  height: 500px;
+  padding: 15px;
+  background: var(--fondo);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+#listaComentarios {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  overflow-y: auto;
+}
+.qTituloComCard {
+  background: rgba(22, 16, 64, 0.8);
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 60px;
+}
+.qComentario {
+  width: 98%;
+  background: var(--fondo);
+  margin: 10px auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.qUsuarioComentario {
+  padding: 0;
+}
+.qDescUsuario::before,
+.qDescUsuario::after {
+  content: " • ";
+}
+.qCita {
+  font-style: italic;
+  padding: 20px;
+}
+.qCita::after,
+.qCita::before {
+  content: '"';
+  font-size: 20px;
+}
+.qBtnComentar {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 15px;
+  padding-bottom: 0;
+  background: rgba(22, 16, 64, 0.856);
+  box-shadow: 0 0 15px rgba(14, 10, 43, 0.4);
+  backdrop-filter: blur(5px);
+  color: var(--fondo);
+  border: none;
+  border-radius: 4px;
+}
+.qFecha {
+  font-size: 12px;
+}
+
+/* ESTILOS PARA LAS TARJETAS. */
+.qTarjeta {
+  color: var(--sangria);
+  width: 80%;
+  height: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 0;
+}
+
+.qImgTarjeta {
+  padding: 0;
+  width: 100%;
+  height: 300px;
+}
+.qImg {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.qInfoTarjeta {
+  padding: 30px 5px 0 5px;
+  padding-bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.qLineaTarjeta {
+  margin: 0 auto;
+  padding: 0;
+  height: 4px;
+  width: 90%;
+  margin-bottom: 15px;
+  border: none;
+  background: var(--sangria);
+}
+[class^="qBoton"] {
+  text-align: center;
+  cursor: pointer;
+  line-height: 24pt;
+  padding: 0 20px;
+  border: none;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  color: white;
+}
+.qEnlaceBoton {
+  margin-top: 20px;
+  padding: 7px;
+  text-decoration: none;
+  border-radius: 5px;
+  background: var(--sangria);
+  color: var(--fondo);
+}
+.qBotonAzul {
+  background: var(--azulMarino);
+}
+.qBotonVerde {
+  float: right;
+  background: var(--azulCielo);
+  color: var(--azulMarino);
+}
+.qInstalacion,
+.qHeaders {
+  display: flex;
+}
+.qInstalacion .qColumna {
+  width: 100%;
+  padding: 20px;
+}
+#comando {
+  background-color: var(--fondoScripts);
+  color: red;
+}
+.qSubSeccion {
+  margin-left: 10%;
+}
+.qSubSeccion::before {
+  content: "";
+  display: block;
+  position: absolute;
+  margin: 0 0 0 -3%;
+  width: 2px;
+  height: 90%;
+  background: var(--sangria);
+}
+.qContenidoIndexado {
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px;
+}
+.qIrDescripcion a {
+  color: black;
+  text-decoration: none;
+} /* Fin de los estilos del index.html */
+
+/* Estilos del docs.html */
+.qHeaderRoboto.qColumna,
+.qHeaderUbuntu.qColumna {
+  padding: 20px;
+  width: 100%;
+}
+.qHeaderUbuntu {
+  font-family: UbuntuRegular;
+}
+.qForm {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: 50px 75px;
+  box-shadow: rgba(0, 0, 0, 0.8) 0 0 5px;
+}
+.qForm .qTextArea,
+.ejemploForms .qTextArea {
+  resize: vertical;
+  max-height: 15vh;
+}
+[class^="qTextArea"] {
+  resize: vertical;
+}
+.qForm em {
+  color: red;
+}
+.qForm .qTexto,
+.qForm .qContrasena,
+.qForm .qSelect,
+.qForm .qTextArea,
+.ejemploForms .qTexto,
+.ejemploForms .qContrasena,
+.ejemploForms .qSelect,
+.ejemploForms .qTextArea {
+  width: 100%;
+}
+.qForm label {
+  margin: 10px;
+}
+.ejemploForms {
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px;
+  margin: 10px;
+  padding: 20px;
+}
+.qTabla {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 10px;
+}
+.qContenedorCelda {
+  background: var(--gris);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  border-radius: 15px;
+}
+.qCodigoHTML {
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 0 5px;
+  padding: 5px;
+  background: var(--fondoScripts);
+  overflow: hidden;
+}
+.qCopiarContenido {
+  font-size: 15px;
+  float: right;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  box-shadow: rgba(89, 37, 56, 0.3) 0 0 5px;
+}
+/* Estilos para el sidebar en el docs.html */
+.qSidebar,
+.qSidebarIndiceRes {
+  background: rgba(22, 16, 64, 0.856);
+  backdrop-filter: blur(15px);
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  overflow-y: auto;
+  transition: 0.5s ease;
+  transition-property: left;
+  z-index: 10;
+}
+.qSidebarIndice {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  width: 50%;
+  height: 70vh;
+  margin: 20px 25px 0 0;
+  background: rgba(22, 16, 64, 0.856);
+  padding: 15px;
+  color: white;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(14, 10, 43, 0.8);
+}
+.qSidebar.qActivo,
+.qSidebarIndiceRes.qActivo {
+  left: 0;
+}
+[class^="qSidebar"] .qSidebarMenu {
+  width: 100%;
+  margin-top: 80px;
+}
+.qSidebarIndice .qSidebarMenu {
+  margin-top: 0;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem {
+  position: relative;
+  cursor: pointer;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+  padding: 5px 30px;
+  line-height: 60px;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem a:hover {
+  color: var(--azulMarino);
+  background: var(--azulCielo);
+  transition: 0.4s ease;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem a .material-icons {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem .qSubMenu {
+  background: rgba(255, 255, 255, 0.2);
+  display: none;
+}
+[class^="qSidebar"] .qSidebarMenu .qItem .qSubMenu a {
+  padding-left: 80px;
+}
+.qCerrarSidebar {
+  position: absolute;
+  color: white;
+  font-size: 20px;
+  right: 0;
+  margin: 25px;
+  cursor: pointer;
+}
+.qAbrirSidebar {
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+  left: 10px;
+  top: 20px;
+}
+
+/*Estilos para el boton de subir */
+.qBtnSubir {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 0, 0, 0.3);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+.qBtnSubir:hover {
+  background-color: #555;
+} /*Fin de estilos para el boton de subir */
+
+/* ESTILOS PARA LOS MODALES */
+.qOculto {
+  display: none;
+}
+
+.qFondoModal {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: rgba(14, 10, 43, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.qModal {
+  height: 60vh;
+  width: 50%;
+  background: var(--fondo);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+  margin-top: 20vh;
+}
+
+.qTituloModal {
+  height: 20%;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: var(--sangria);
+  color: white;
+}
+
+.qTablaForm {
+  color: var(--sangria);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+}
+
+[class$="CeldaForm"] input,
+[class$="CeldaForm"] textarea {
+  width: 100%;
+}
+
+.qTablaForm .qTextAreaCeldaForm {
+  grid-column: 1/3;
+}
+
+.qTextAreaCeldaForm .qTextArea {
+  height: 50px;
+  max-height: 150px;
+}
+
+/* Estilos para el footer */
+.qFooter {
+  background: var(--sangria);
+  color: white;
+}
+.qTítuloLlaves {
+  margin-top: 10px;
+  text-align: center;
+  color: white;
+}
+
+.qTítuloLlaves::before {
+  content: "{  ";
+}
+
+.qTítuloLlaves::after {
+  content: "  }";
+}
+
+#avisoPrivacidad {
+  color: white;
+  margin: 5px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.qlinea {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.qFooterInfo {
+  width: 90%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-gap: 15px;
+  text-align: center;
+}
+
+.qFooterInfo div {
+  width: 100%;
+}
+
+.qFooterSubTitulo {
+  font-size: 25px;
+}
+
+.qParrafoFooter {
+  font-size: 12px;
+} /* Fin estilos footer */
+
+/* Estilos para presentaion.html */
+.qPresentacionEquipo * {
+  padding: 10px;
+}
+.qCreadores {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #eeeded;
+  margin: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+.qImagenPresentacion {
+  width: 60%;
+}
+.qImagenPresentacion img {
+  width: 100%;
+}
+.qDescripcionCreador {
+  width: 100%;
+  text-align: center;
+} /*Fin de estilos de presentacion.html*/
+/* Estilos para el 404.html */
+div.q404 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+} /* fin estilos 404.html */
+
+/* ESTILOS PARA EJEMPLOS.HTML */
+.qCatalogoEjemplos {
+  padding: 10px;
+  display: flex;
+}
+.qEjemplosHTML {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+.qEjemplosHTML img {
+  width: 100%;
+}
+
+/* ESTILOS PARA EL LOGIN.HTML */
+body.qLogin {
+  margin: 0;
+  padding: 0;
+  background: url(../img/bg.jpg) no-repeat center top;
+  background-size: cover;
+  font-family: sans-serif;
+  height: 100vh;
+}
+
+.login-box {
+  width: 320px;
+  height: 420px;
+  background-color: black;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 70px 30px;
+}
+input[type="submit"] {
+  cursor: pointer;
+}
+.login-box .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+.login-box h1 {
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 22px;
+}
+
+.login-box label {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  display: block;
+}
+
+.login-box input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="email"],
+.login-box input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: linear-gradient(to right top, black, #161040);
+  color: #fff;
+  font-size: px;
+  border-radius: 20px;
+}
+
+.login-box a {
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 20px;
+  color: #54bfb5;
+}
+
+.login-box a:hover {
+  color: #fff;
+} /* fin estilos del login.html */
+
+/*Estilos para descargas.html */
+.instrucciones {
+  margin-top: 0px;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+.note {
+  background-color: #f2f2f2;
+  border-left: 6px solid #592538;
+  margin-left: 100px;
+}
+code {
+  margin-left: 20px;
+}
+.notedanger {
+  background-color: #f2f2f2;
+  border-left: 6px solid #f44336;
+  margin-left: 100px;
+}
+.listo {
+  display: block;
+}
+.instrucciones h1 {
+  text-align: center;
+} /*Fin estilos descrgas.html*/
+#iconos a {
+  color: black;
+  text-decoration: none;
+}
+.qContenedorIconos {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.qContenedorIconos > * {
+  flex: 1 1 20%;
+}
+.material-icons.qIconos {
+  width: 100%;
+  margin: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+/* ---------------------------- ESTILOS DE VISTA EN DISPOSITIVOS ----------------------------*/
+/* ------------------------------- Escritorio ------------------------------- */
+@media screen and (min-width: 1024px) {
+  .qAbrirSidebarIndice {
+    display: none;
+  }
+  .qSidebarIndiceRes {
+    display: none;
+  }
+}
+
+/* ------------------------------- Tabletas ------------------------------- */
+@media screen and (min-width: 720px) and (max-width: 1023px) {
+  .qPresentacion {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-auto-flow: dense;
+  }
+  .qImagenDerecha {
+    grid-row: 1;
+    width: 400px;
+    margin: 0 auto;
+  }
+  .qInstalacion {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+  .qAbrirSidebarIndice span {
+    padding: 15px;
+    background: rgba(22, 16, 64, 0.9);
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    left: 0;
+    top: 50%;
+  }
+  .qSidebarIndice {
+    display: none;
+  }
+  .qModal {
+    width: 70%;
+  }
+}
+/* ------------------------------- Móviles ------------------------------- */
+@media screen and (max-width: 719px) {
+  .qPresentacion {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-auto-flow: dense;
+  }
+  .qImagenDerecha {
+    grid-row: 1;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  .qInstalacion {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+  .qAbrirSidebarIndice span {
+    padding: 15px;
+    background: rgba(22, 16, 64, 0.9);
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 50%;
+  }
+  .qSidebarIndice {
+    display: none;
+  }
+  .qTarjeta {
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-gap: 0;
+  }
+  .qModal {
+    width: 90%;
+  }
+  .qFooterInfo {
+    grid-template-columns: repeat(2, auto);
+  }
+  header {
+    display: block;
+  }
+  nav {
+    float: left;
+    clear: both;
+    width: 100%;
+    display: none;
+  }
+  nav li {
+    display: block;
+    margin: 0;
+    text-align: center;
+  }
+  nav li a {
+    margin: 2px;
+  }
+  .qNavbarResponsivo {
+    display: block;
+  }
+  nav.activo {
+    display: flex;
+  }
+  .login-box {
+    width: 270px;
+    height: 370px;
+  }
+  .qCreadores,
+  .qCatalogoEjemplos {
+    font-size: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+  }
+  .qImagenPresentacion {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* ESTILOS PARA LAS ANIMACIONES */
+/* Animacion de cambiar palabras */
+.qTextoAnimado {
+  color: var(--negro);
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  display: block;
+}
+.qGiro {
+  height: 50px;
+  overflow: hidden;
+}
+.qGiro > div > div {
+  color: white;
+  padding: 12px 12px;
+  height: 45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+.qGiro div:first-child {
+  animation: cambiar 6s linear infinite;
+}
+.qGiro div div {
+  background: var(--sangria);
+}
+.qGiro div:first-child div {
+  background: var(--azulMarino);
+}
+.qGiro div:last-child div {
+  background: var(--azulCielo);
+}
+@keyframes cambiar {
+  0% {
+    margin-top: -50px;
+  }
+  5% {
+    margin-top: -45px;
+  }
+  33% {
+    margin-top: -45px;
+  }
+  38% {
+    margin-top: -30px;
+  }
+  66% {
+    margin-top: -30px;
+  }
+  71% {
+    margin-top: 0px;
+  }
+  99.99% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: -50px;
+  }
+}
+/* Animacion de una barra de "cargando" */
+.qContenedorCargando {
+  width: 100%;
+}
+.qContenedorCargando .qCargando {
+  position: relative;
+  padding: 20px;
+  display: flex;
+}
+.qContenedorCargando .qCargando .qCargandoTexto {
+  position: relative;
+  text-align: left;
+  width: 80px;
+  letter-spacing: 1px;
+}
+.qContenedorCargando .qCargando .qPorcentaje {
+  position: relative;
+  width: calc(100% - 160px);
+  height: 20px;
+  background: var(--fondoScripts);
+  border-radius: 15px;
+  margin: 0 10px;
+}
+.qContenedorCargando .qCargando .qPorcentaje .qProgreso {
+  position: absolute;
+  height: 100%;
+  border-radius: 15px;
+  background: linear-gradient(270deg, var(--sangria), var(--azulMarino));
+  overflow-x: hidden;
+}
+.qContenedorCargando .qCargando .qPorcentaje #infinito.qProgreso {
+  animation: moverBarraInfinita 6s ease-in-out infinite;
+}
+.qContenedorCargando .qCargando .qPorcentaje #finito.qProgreso {
+  animation: moverBarra 6s ease-in-out infinite;
+}
+@keyframes moverBarraInfinita {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0%;
+    left: 100%;
+  }
+}
+@keyframes moverBarra {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+/* Animacion de un cargando, pero en espiral */
+.qContenedorCargandoEspiral {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 10px;
+  background: var(--fondoCargandoEspiral);
+}
+.qContenedorCargandoEspiral .qCargandoEspiral {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--fondoRutaCargandoEspiral);
+  animation: cargandoEspiral 3s linear infinite;
+}
+.qContenedorCargandoEspiral .qCargandoEspiral::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to top, transparent, rgba(0, 255, 249, 0.4));
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+.qContenedorCargandoEspiral .qCargandoEspiral::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 10;
+  background: var(--azulCielo);
+  box-shadow: 0 0 10px var(--azulCielo);
+}
+.qContenedorCargandoEspiral .qCargandoEspiral span {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: var(--fondoCargandoEspiral);
+  border-radius: 50%;
+}
+@keyframes cargandoEspiral {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Animación "glitch" */
+.qContenedorGlitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+.qContenedorGlitch .qGlitch {
+  position: relative;
+  color: white;
+  font-size: 45px;
+  padding: 30px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.qContenedorGlitch .qGlitch:before,
+.qContenedorGlitch .qGlitch:after {
+  padding: 30px;
+  color: white;
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: black;
+  overflow: hidden;
+  top: 0;
+}
+.qContenedorGlitch .qGlitch:before {
+  left: 3px;
+  text-shadow: -2px 0 red;
+  animation: glitch-1 2s linear infinite reverse;
+}
+.qContenedorGlitch .qGlitch:after {
+  left: -3px;
+  text-shadow: -2px 0 blue;
+  animation: glitch-2 2s linear infinite reverse;
+}
+@keyframes glitch-1 {
+  0% {
+    clip: rect(132px, auto, 101px, 30px);
+  }
+  5% {
+    clip: rect(17px, auto, 94px, 30px);
+  }
+  10% {
+    clip: rect(40px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(87px, auto, 82px, 30px);
+  }
+  20% {
+    clip: rect(137px, auto, 61px, 30px);
+  }
+  25% {
+    clip: rect(34px, auto, 14px, 30px);
+  }
+  30% {
+    clip: rect(133px, auto, 74px, 30px);
+  }
+  35% {
+    clip: rect(76px, auto, 107px, 30px);
+  }
+  40% {
+    clip: rect(59px, auto, 130px, 30px);
+  }
+  45% {
+    clip: rect(29px, auto, 84px, 30px);
+  }
+  50% {
+    clip: rect(22px, auto, 67px, 30px);
+  }
+  55% {
+    clip: rect(67px, auto, 62px, 30px);
+  }
+  60% {
+    clip: rect(10px, auto, 105px, 30px);
+  }
+  65% {
+    clip: rect(78px, auto, 115px, 30px);
+  }
+  70% {
+    clip: rect(105px, auto, 13px, 30px);
+  }
+  75% {
+    clip: rect(15px, auto, 75px, 30px);
+  }
+  80% {
+    clip: rect(66px, auto, 39px, 30px);
+  }
+  85% {
+    clip: rect(133px, auto, 73px, 30px);
+  }
+  90% {
+    clip: rect(36px, auto, 128px, 30px);
+  }
+  95% {
+    clip: rect(68px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(14px, auto, 100px, 30px);
+  }
+}
+@keyframes glitch-2 {
+  0% {
+    clip: rect(129px, auto, 36px, 30px);
+  }
+  5% {
+    clip: rect(36px, auto, 4px, 30px);
+  }
+  10% {
+    clip: rect(85px, auto, 66px, 30px);
+  }
+  15% {
+    clip: rect(91px, auto, 91px, 30px);
+  }
+  20% {
+    clip: rect(148px, auto, 138px, 30px);
+  }
+  25% {
+    clip: rect(38px, auto, 122px, 30px);
+  }
+  30% {
+    clip: rect(69px, auto, 54px, 30px);
+  }
+  35% {
+    clip: rect(98px, auto, 71px, 30px);
+  }
+  40% {
+    clip: rect(146px, auto, 34px, 30px);
+  }
+  45% {
+    clip: rect(134px, auto, 43px, 30px);
+  }
+  50% {
+    clip: rect(102px, auto, 80px, 30px);
+  }
+  55% {
+    clip: rect(119px, auto, 44px, 30px);
+  }
+  60% {
+    clip: rect(106px, auto, 99px, 30px);
+  }
+  65% {
+    clip: rect(141px, auto, 74px, 30px);
+  }
+  70% {
+    clip: rect(20px, auto, 78px, 30px);
+  }
+  75% {
+    clip: rect(133px, auto, 79px, 30px);
+  }
+  80% {
+    clip: rect(78px, auto, 52px, 30px);
+  }
+  85% {
+    clip: rect(35px, auto, 39px, 30px);
+  }
+  90% {
+    clip: rect(67px, auto, 70px, 30px);
+  }
+  95% {
+    clip: rect(71px, auto, 103px, 30px);
+  }
+  100% {
+    clip: rect(83px, auto, 40px, 30px);
+  }
+}

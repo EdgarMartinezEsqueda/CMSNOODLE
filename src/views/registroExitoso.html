@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <body>
+    <!-- Agregamos el navbar-->
+    <%- include ("templates/navbar.html") %>
+    <link rel="stylesheet" href="css/noodle.css" />
+    <main class="nRegistroExitoso">
+      <div class="nRegistroExitosoCard">
+        <div class="nRegistroExitosoCheck">
+          <i class="checkmark">✓</i>
+        </div>
+        <h1>Éxito</h1>
+        <p>
+          Se ha creado tu cuenta exitosamente<br />
+          Inicia sesión con tu nueva cuenta cuenta <a href="login">aquí</a>
+        </p>
+      </div>
+    </main>
+    <!-- Agregamos el footer-->
+    <%- include ("templates/footer.html") %>
+  </body>
+</html>

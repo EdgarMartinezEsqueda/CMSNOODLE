@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Agregamos el head -->
+  <%- include ("templates/head.html") %>
+  <body>
+    <!-- Agregamos el navbar-->
+    <%- include ("templates/navbar.html") %>
+    <main>
+      <form action="crearCV" method="POST" class="qForm">
+        <label for="biografia">Biografía</label>
+        <input type="text" name="biografia" class="qTexto" />
+        <br />
+        <label for="habilidades">Habilidades</label>
+        <input type="text" name="habilidades" class="qTexto" />
+        <br />
+        <label for="experiencia">Experiencia</label>
+        <textarea
+          name="experiencia"
+          cols="30"
+          rows="10"
+          class="qTextArea"
+        ></textarea>
+        <br />
+        <label for="formacion">Formación</label>
+        <textarea
+          name="formacion"
+          cols="30"
+          rows="10"
+          class="qTextArea"
+        ></textarea>
+        <br />
+        <label for="idiomas">Idiomas</label>
+        <textarea
+          name="idiomas"
+          cols="30"
+          rows="10"
+          class="qTextArea"
+        ></textarea>
+        <input type="submit" value="Guardar" class="qBoton qBotonAzul" />
+      </form>
+    </main>
+    <!-- Agregamos el footer-->
+    <%- include ("templates/footer.html") %>
+  </body>
+</html>
